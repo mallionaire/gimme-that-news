@@ -25,8 +25,8 @@ jobs:
           postgresql user: mr_testerson
           postgresql password: pa55w0rd # very secure
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Test utils and app # improve the descriptive name
-      run: PGDATABASE=test_db PGUSER=mr_testerson PGPASSWORD=pa55w0rd npm test
+      - name: Test utils and app # improve the descriptive name
+        run: PGDATABASE=test_db PGUSER=mr_testerson PGPASSWORD=pa55w0rd npm test
