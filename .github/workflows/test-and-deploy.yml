@@ -12,7 +12,7 @@ jobs:
       - name: Say hello
         run: echo 'Hello everyone from the pipeline!'
   
-test:
+  test:
   runs-on: ubuntu-latest
   steps:
     - name: Checkout and clone repo
