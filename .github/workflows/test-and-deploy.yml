@@ -1,14 +1,14 @@
-name: Test and Deploy # provide a name
+name: Test and Deploy 
 
 on:
-  push:               # tell it when to run
+  push:              
     branches:
       - main
 
-jobs:                # determine what we want to happen when the workflow runs
+jobs:              
   greeting:
-    runs-on: ubuntu-latest # specify WHAT OS we'd like our code to run on (linux is cheapest)
-    steps:            # lay out the steps for the job - in this case, say Hello
+    runs-on: ubuntu-latest
+    steps:
       - name: Say hello
         run: echo 'Hello everyone from the pipeline!'
   
