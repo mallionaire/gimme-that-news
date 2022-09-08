@@ -15,6 +15,9 @@ jobs:                # determine what we want to happen when the workflow runs
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout and clone repo
+        uses: actions/checkout@v2
+
       - name: Install dependencies
         run: npm install
 
