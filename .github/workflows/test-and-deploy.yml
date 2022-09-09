@@ -5,8 +5,22 @@ on:
     branches: 
       - main
 jobs: 
-  greeting:  #name provided for ach job - should be unique
+  greeting:  #name provided for each job - should be unique
     runs-on: ubuntu-latest # specifying the OS for our VM 
     steps: 
       - name: Say Hi
         run: echo "Hello from the pipeline!"
+
+  # clone --> install deps --> npm test
+  test: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout and clone repo # descriptive 
+        uses: actions/checkout@v2
+
+      - name: Install Deps 
+        run: npm install
+
+      - name: Its Testing time - unit tests
+        run: npm test utils
+      
