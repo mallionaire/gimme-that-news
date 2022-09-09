@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest # specifying the OS for our VM 
     steps: 
       - name: Say Hi
-          run: echo "Hello from the pipeline!"
+        run: echo "Hello from the pipeline!"
