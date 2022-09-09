@@ -1,0 +1,12 @@
+name: Test and Deploy
+
+on:
+  push: # telling it when to run 
+    branches: 
+      - main
+jobs: 
+  greeting:  #name provided for ach job - should be unique
+    runs-on: ubuntu-latest # specifying the OS for our VM 
+    steps: 
+      name: Say Hi
+        run: echo "Hello from the pipeline!"
