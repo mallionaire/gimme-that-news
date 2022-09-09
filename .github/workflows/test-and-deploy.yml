@@ -16,11 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout and clone repo # descriptive 
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 
+
+      - name: setup Postgres
+        uses: harmon758/postgresql-action@v1
+        with: 
+          postgresql db: test_db
+          postgresql user: clive_onion
+          postgresql password: password
 
       - name: Install Deps 
         run: npm install
 
-      - name: Its Testing time - unit tests
-        run: npm test utils
+      - name: Its Testing Time!
+        run: PGDATABASE=test_db PGUSER=clive_onion PGPASSWORD=password npm test
       
