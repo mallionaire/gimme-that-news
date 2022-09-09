@@ -15,6 +15,9 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use('/api', apiRouter);
+app.use('/banana', (req, res)=> {
+  res.status(200).send({msg: "banana's are technically a herb"})
+})
 
 app.all('/*', routeNotFound);
 
